@@ -37,16 +37,16 @@ SELECT * FROM Users WHERE username='admin' AND password="AND email LIKE '%@teste
 **2.**
 
 ```
-SELECT * FROM Users WHERE username='admin' -- AND password=" AND email like '%@testers.com'
+SELECT * FROM Users WHERE username='admin' -- AND password=" AND email LIKE '%@testers.com'
 ```
+
+This query will comment out the `AND` statement and therefore select any user with the username `admin`. This injection will be successful.
 
 **3.**
 
 ```
-SELECT * FROM Users WHERE username='admin' ?AND password=" AND email like '%@testers.com'
+SELECT * FROM Users WHERE username='admin' ?AND password=" AND email LIKE '%@testers.com'
 ```
-
-
 
 ## Cross-Site Scripting (XSS)
 
@@ -116,7 +116,7 @@ Roll Based Access Control (RBAC) is a way to restrict file access based on the u
 
 Attribution Based Access Control (ABAC) is considered a next-generation policy-based access control system.
 
-Cross-Site Request Forgery (CSRF) attacks  can be mitigated by implementing a defense-in-depth technique such as not including secrets in the URL?
+Cross-Site Request Forgery (CSRF) attacks  can be mitigated by implementing a defense-in-depth technique such as not including secrets in the URL.
 
 CAPTCHA can be used to protect authentication systems from automated brute-force attacks.
 
@@ -126,9 +126,9 @@ In an authentication system **strong passwords**, **user logout and session inac
 
 The most common consequences of a CSRF attack is **elevation of privileges**, **denial of service** and **spoofing**.
 
-A common string to identify a broken authorization vulnerability is ..?
+A common string to identify a broken authorization vulnerability is `http://example.com/login?userid=1337` where you try different values for the user id.
 
-If you are intercepting a web application, log in and find that it makes a request to `http://www.example.com/app?action=login&uname=jane&password=123456`, then the site incorrectly uses GET to send credentials. The site is also susceptible to CSRF attacks as the complete form is available as a URL. It is also possible that the site..?
+If you are intercepting a web application, log in and find that it makes a request to `http://www.example.com/app?action=login&uname=jane&password=123456`, then the site incorrectly uses GET to send credentials. The site is also susceptible to CSRF attacks as the complete form is available as a URL. The page is served over HTTP which is never a good idea when sending credentials.
 
 ## Configuration / Code
 
