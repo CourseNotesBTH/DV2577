@@ -132,7 +132,7 @@ If you are intercepting a web application, log in and find that it makes a reque
 
 ## Configuration / Code
 
-If you have not yet applied the most recent service packs and updates to a web application you are more susceptible to security misconfiguration threats?
+If you have not yet applied the most recent service packs and updates to a web application you are more susceptible to security misconfiguration threats.
 
 Transport layer protection is best implemented by enabling TLS (previously SSL).
 
